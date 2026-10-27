@@ -35,10 +35,7 @@ namespace RedElectricaMunicipal.Estructuras
             _cantidadElementos = 0;
         }
 
-        /// <summary>
         /// Función Hash Polinómica (algoritmo DJB2 adaptado) para distribuir claves uniformemente.
-        /// Complejidad: O(L) donde L es la longitud del código.
-        /// </summary>
         private int FuncionHash(string clave)
         {
             string claveNormalizada = clave.Trim().ToUpper();
@@ -49,10 +46,6 @@ namespace RedElectricaMunicipal.Estructuras
             }
             return (int)(hash % (ulong)_capacidad);
         }
-
-        /// <summary>
-        /// Inserta o actualiza una subestación en la Tabla Hash. Complejidad promedio: O(1).
-        /// </summary>
         public bool Insertar(Subestacion subestacion)
         {
             if (subestacion == null || string.IsNullOrWhiteSpace(subestacion.Codigo))
@@ -70,9 +63,8 @@ namespace RedElectricaMunicipal.Estructuras
             {
                 if (actual.Clave.Equals(subestacion.Codigo, StringComparison.OrdinalIgnoreCase))
                 {
-                    // Ya existe el código; actualizamos sus datos
                     actual.Valor = subestacion;
-                    return false; // Retorna false indicando que fue actualización, no nuevo registro
+                    return false;
                 }
                 actual = actual.Siguiente;
             }
@@ -83,10 +75,6 @@ namespace RedElectricaMunicipal.Estructuras
             _cantidadElementos++;
             return true;
         }
-
-        /// <summary>
-        /// Busca una subestación dado su código único. Complejidad promedio: O(1).
-        /// </summary>
         public Subestacion Buscar(string codigo)
         {
             if (string.IsNullOrWhiteSpace(codigo)) return null;
@@ -105,9 +93,6 @@ namespace RedElectricaMunicipal.Estructuras
             return null;
         }
 
-        /// <summary>
-        /// Elimina una subestación de la Tabla Hash por su código. Complejidad promedio: O(1).
-        /// </summary>
         public bool Eliminar(string codigo)
         {
             if (string.IsNullOrWhiteSpace(codigo)) return false;
@@ -134,10 +119,8 @@ namespace RedElectricaMunicipal.Estructuras
             return false;
         }
 
-        /// <summary>
         /// Duplica la capacidad de la tabla y reubica los registros cuando se supera el factor de carga.
         /// Complejidad: O(n).
-        /// </summary>
         private void Rehash()
         {
             int nuevaCapacidad = _capacidad * 2 + 1;
@@ -158,9 +141,7 @@ namespace RedElectricaMunicipal.Estructuras
             }
         }
 
-        /// <summary>
         /// Devuelve un arreglo propio con todas las subestaciones registradas. Complejidad: O(n + m).
-        /// </summary>
         public Subestacion[] ObtenerTodas()
         {
             Subestacion[] resultado = new Subestacion[_cantidadElementos];
@@ -181,9 +162,7 @@ namespace RedElectricaMunicipal.Estructuras
             return resultado;
         }
 
-        /// <summary>
         /// Recorre e imprime el estado interno de las cubetas y colisiones de la Tabla Hash.
-        /// </summary>
         public void ImprimirEstructuraHash()
         {
             Console.WriteLine($"\n--- ESTADO DE LA TABLA HASH (Capacidad: {_capacidad}, Elementos: {_cantidadElementos}) ---");
