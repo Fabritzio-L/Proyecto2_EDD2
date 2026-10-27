@@ -1,0 +1,8 @@
+# CodigoOrigen;CodigoDestino;LongitudKm;CostoMantenimiento;EsUnidireccional
+SUB-01;SUB-02;12.5;1500.00;false
+SUB-01;SUB-04;10.0;1200.00;false
+SUB-02;SUB-03;5.2;650.00;true
+SUB-02;SUB-05;8.4;980.00;false
+SUB-04;SUB-03;6.8;820.00;true
+SUB-05;SUB-06;4.1;490.00;true
+SUB-03;SUB-06;3.5;410.00;false
