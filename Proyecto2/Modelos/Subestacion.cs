@@ -2,7 +2,7 @@ using System;
 
 namespace RedElectricaMunicipal.Modelos
 {
-    /// Representa una subestación eléctrica municipal con código único, nombre y capacidad.
+    // Representa una subestación eléctrica municipal con código único, nombre y capacidad.
     public class Subestacion
     {
         public string Codigo { get; set; }

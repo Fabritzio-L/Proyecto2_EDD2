@@ -35,7 +35,7 @@ namespace RedElectricaMunicipal.Estructuras
             _cantidadElementos = 0;
         }
 
-        /// Función Hash Polinómica (algoritmo DJB2 adaptado) para distribuir claves uniformemente.
+        // Función Hash Polinómica (algoritmo DJB2 adaptado) para distribuir claves uniformemente.
         private int FuncionHash(string clave)
         {
             string claveNormalizada = clave.Trim().ToUpper();
@@ -119,8 +119,8 @@ namespace RedElectricaMunicipal.Estructuras
             return false;
         }
 
-        /// Duplica la capacidad de la tabla y reubica los registros cuando se supera el factor de carga.
-        /// Complejidad: O(n).
+        // Duplica la capacidad de la tabla y reubica los registros cuando se supera el factor de carga.
+        // Complejidad: O(n).
         private void Rehash()
         {
             int nuevaCapacidad = _capacidad * 2 + 1;
@@ -141,7 +141,7 @@ namespace RedElectricaMunicipal.Estructuras
             }
         }
 
-        /// Devuelve un arreglo propio con todas las subestaciones registradas. Complejidad: O(n + m).
+        // Devuelve un arreglo propio con todas las subestaciones registradas. Complejidad: O(n + m).
         public Subestacion[] ObtenerTodas()
         {
             Subestacion[] resultado = new Subestacion[_cantidadElementos];
@@ -162,7 +162,7 @@ namespace RedElectricaMunicipal.Estructuras
             return resultado;
         }
 
-        /// Recorre e imprime el estado interno de las cubetas y colisiones de la Tabla Hash.
+        // Recorre e imprime el estado interno de las cubetas y colisiones de la Tabla Hash.
         public void ImprimirEstructuraHash()
         {
             Console.WriteLine($"\n--- ESTADO DE LA TABLA HASH (Capacidad: {_capacidad}, Elementos: {_cantidadElementos}) ---");

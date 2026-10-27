@@ -2,7 +2,7 @@ using System;
 
 namespace RedElectricaMunicipal.Modelos
 {
-    /// Representa una línea de transmisión o distribución entre dos subestaciones.
+    // Representa una línea de transmisión o distribución entre dos subestaciones.
     public class LineaDistribucion
     {
         public string CodigoOrigen { get; set; }
