@@ -1,31 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\javia\\OneDrive\\Escritorio\\Engineering\\SEMESTRE IV\\ESTRUCTURA DE DATOS II\\Proyecto2EDD\\Proyecto2_EDD2\\Proyecto2\\RedElectricaMunicipal.csproj": {}
+    "C:\\Users\\fabri\\Desktop\\Proyecto2_EDD2\\Proyecto2\\RedElectricaMunicipal.csproj": {}
   },
   "projects": {
-    "C:\\Users\\javia\\OneDrive\\Escritorio\\Engineering\\SEMESTRE IV\\ESTRUCTURA DE DATOS II\\Proyecto2EDD\\Proyecto2_EDD2\\Proyecto2\\RedElectricaMunicipal.csproj": {
+    "C:\\Users\\fabri\\Desktop\\Proyecto2_EDD2\\Proyecto2\\RedElectricaMunicipal.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\javia\\OneDrive\\Escritorio\\Engineering\\SEMESTRE IV\\ESTRUCTURA DE DATOS II\\Proyecto2EDD\\Proyecto2_EDD2\\Proyecto2\\RedElectricaMunicipal.csproj",
+        "projectUniqueName": "C:\\Users\\fabri\\Desktop\\Proyecto2_EDD2\\Proyecto2\\RedElectricaMunicipal.csproj",
         "projectName": "RedElectricaMunicipal",
-        "projectPath": "C:\\Users\\javia\\OneDrive\\Escritorio\\Engineering\\SEMESTRE IV\\ESTRUCTURA DE DATOS II\\Proyecto2EDD\\Proyecto2_EDD2\\Proyecto2\\RedElectricaMunicipal.csproj",
-        "packagesPath": "C:\\Users\\javia\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\javia\\OneDrive\\Escritorio\\Engineering\\SEMESTRE IV\\ESTRUCTURA DE DATOS II\\Proyecto2EDD\\Proyecto2_EDD2\\Proyecto2\\obj\\",
+        "projectPath": "C:\\Users\\fabri\\Desktop\\Proyecto2_EDD2\\Proyecto2\\RedElectricaMunicipal.csproj",
+        "packagesPath": "C:\\Users\\fabri\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\fabri\\Desktop\\Proyecto2_EDD2\\Proyecto2\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\javia\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\fabri\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -62,6 +56,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.30, 8.0.30]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[8.0.30, 8.0.30]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.30, 8.0.30]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[8.0.30, 8.0.30]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"

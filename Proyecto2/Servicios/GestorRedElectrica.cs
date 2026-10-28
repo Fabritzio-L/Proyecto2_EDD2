@@ -26,11 +26,24 @@ namespace RedElectricaMunicipal.Servicios
         // Registra una subestación sincronizando Tabla Hash, Trie, Grafo y Union-Find.
         public bool RegistrarSubestacion(string codigo, string nombre, double capacidadMW)
         {
+            if (string.IsNullOrWhiteSpace(codigo) || string.IsNullOrWhiteSpace(nombre))
+                return false;
+
+            // 1. Verificar si ya existe una subestación con ese código en la Tabla Hash
+            Subestacion existente = TablaHash.Buscar(codigo);
+            if (existente != null)
+            {
+                // Eliminar el nombre antiguo del Trie para que no quede duplicado
+                TrieNombres.Eliminar(existente.Nombre);
+            }
+
+            // 2. Crear y registrar la subestación actualizada en todas las estructuras
             Subestacion sub = new Subestacion(codigo, nombre, capacidadMW);
             bool esNueva = TablaHash.Insertar(sub);
             TrieNombres.Insertar(sub.Nombre, sub.Codigo);
             Grafo.AgregarVertice(sub.Codigo);
             UnionFind.RegistrarSubestacion(sub.Codigo);
+            
             return esNueva;
         }
 
@@ -41,6 +54,8 @@ namespace RedElectricaMunicipal.Servicios
             if (existente == null) return false;
 
             TrieNombres.Eliminar(existente.Nombre);
+            Grafo.DesconectarVertice(existente.Codigo);
+            Grafo.SincronizarUnionFind(UnionFind);
             return TablaHash.Eliminar(codigo);
         }
 
@@ -173,15 +188,12 @@ namespace RedElectricaMunicipal.Servicios
                     if (buffer.Length > 0)
                         buffer = buffer.Substring(0, buffer.Length - 1);
                 }
-                else if (tecla.Key >= ConsoleKey.D1 && tecla.Key <= ConsoleKey.D5)
+                else if (tecla.Key >= ConsoleKey.D1 && tecla.Key <= ConsoleKey.D5 && ((int)tecla.Key - (int)ConsoleKey.D1) < sugerencias.Length)
                 {
                     int idx = (int)tecla.Key - (int)ConsoleKey.D1;
-                    if (idx < sugerencias.Length)
-                    {
-                        Console.SetCursorPosition(0, Console.CursorTop + 6);
-                        Console.WriteLine($"Seleccionado #{idx + 1}: {sugerencias[idx].NombreSubestacion} [{sugerencias[idx].CodigoSubestacion}]");
-                        return sugerencias[idx].CodigoSubestacion;
-                    }
+                    Console.SetCursorPosition(0, Console.CursorTop + 6);
+                    Console.WriteLine($"Seleccionado #{idx + 1}: {sugerencias[idx].NombreSubestacion} [{sugerencias[idx].CodigoSubestacion}]");
+                    return sugerencias[idx].CodigoSubestacion;
                 }
                 else if (!char.IsControl(tecla.KeyChar))
                 {
@@ -190,12 +202,9 @@ namespace RedElectricaMunicipal.Servicios
             }
         }
 
-        // Ejecuta el Flujo Integrado Obligatorio (Requisito Técnico #2):
-        // 1. Trie sugiere nombre/código -> 2. Tabla Hash recupera fichas completas ->
-        // 3. Union-Find valida conectividad de zona -> 4. Grafo calcula Dijkstra de menor costo.
         public void EjecutarFlujoIntegradoRestablecimiento()
         {
-            Console.WriteLine("   FLUJO INTEGRADO: RESTABLECIMIENTO DE SUMINISTRO (4 ESTRUCTURAS)    ");
+            Console.WriteLine("FLUJO INTEGRADO: RESTABLECIMIENTO DE SUMINISTRO");
 
             string codOrigen = SeleccionarSubestacionConAutocompletado("ORIGEN");
             if (codOrigen == null) return;

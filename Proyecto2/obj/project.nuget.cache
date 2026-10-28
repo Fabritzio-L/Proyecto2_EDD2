@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "Bpv1iP+ljK0=",
+  "dgSpecHash": "juQrhvmfh6Y=",
   "success": true,
-  "projectFilePath": "C:\\Users\\javia\\OneDrive\\Escritorio\\Engineering\\SEMESTRE IV\\ESTRUCTURA DE DATOS II\\Proyecto2EDD\\Proyecto2_EDD2\\Proyecto2\\Proyecto2.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\fabri\\Desktop\\Proyecto2_EDD2\\Proyecto2\\RedElectricaMunicipal.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\fabri\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.30\\microsoft.netcore.app.ref.8.0.30.nupkg.sha512",
+    "C:\\Users\\fabri\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.30\\microsoft.windowsdesktop.app.ref.8.0.30.nupkg.sha512",
+    "C:\\Users\\fabri\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.30\\microsoft.aspnetcore.app.ref.8.0.30.nupkg.sha512",
+    "C:\\Users\\fabri\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\8.0.30\\microsoft.netcore.app.host.win-x64.8.0.30.nupkg.sha512"
+  ],
   "logs": []
 }
