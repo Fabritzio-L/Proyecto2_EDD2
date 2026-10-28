@@ -35,7 +35,7 @@ namespace RedElectricaMunicipal
                 Console.WriteLine("║  6. Verificar si 2 subestaciones están en la misma zona (Union-Find)   ║");
                 Console.WriteLine("║  7. Recorridos del Grafo (BFS y DFS) desde una subestación             ║");
                 Console.WriteLine("║  8. Calcular ruta de menor costo con Dijkstra (Grafo)                  ║");
-                Console.WriteLine("║  9. ★ FLUJO INTEGRADO COMPLETO (Trie -> Hash -> Union-Find -> Dijkstra)║");
+                Console.WriteLine("║  9. FLUJO INTEGRADO COMPLETO (Trie -> Hash -> Union-Find -> Dijkstra)  ║");
                 Console.WriteLine("║ 10. Eliminar subestación o línea de distribución                       ║");
                 Console.WriteLine("║ 11. Imprimir estructuras internas y generar Reporte Ejecutivo (.txt)   ║");
                 Console.WriteLine("║  0. Salir                                                              ║");

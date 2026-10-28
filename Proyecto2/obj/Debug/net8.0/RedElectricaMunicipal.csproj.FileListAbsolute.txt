@@ -1,0 +1,15 @@
+C:\Users\javia\OneDrive\Escritorio\Engineering\SEMESTRE IV\ESTRUCTURA DE DATOS II\Proyecto2EDD\Proyecto2_EDD2\Proyecto2\bin\Debug\net8.0\RedElectricaMunicipal.exe
+C:\Users\javia\OneDrive\Escritorio\Engineering\SEMESTRE IV\ESTRUCTURA DE DATOS II\Proyecto2EDD\Proyecto2_EDD2\Proyecto2\bin\Debug\net8.0\RedElectricaMunicipal.deps.json
+C:\Users\javia\OneDrive\Escritorio\Engineering\SEMESTRE IV\ESTRUCTURA DE DATOS II\Proyecto2EDD\Proyecto2_EDD2\Proyecto2\bin\Debug\net8.0\RedElectricaMunicipal.runtimeconfig.json
+C:\Users\javia\OneDrive\Escritorio\Engineering\SEMESTRE IV\ESTRUCTURA DE DATOS II\Proyecto2EDD\Proyecto2_EDD2\Proyecto2\bin\Debug\net8.0\RedElectricaMunicipal.dll
+C:\Users\javia\OneDrive\Escritorio\Engineering\SEMESTRE IV\ESTRUCTURA DE DATOS II\Proyecto2EDD\Proyecto2_EDD2\Proyecto2\bin\Debug\net8.0\RedElectricaMunicipal.pdb
+C:\Users\javia\OneDrive\Escritorio\Engineering\SEMESTRE IV\ESTRUCTURA DE DATOS II\Proyecto2EDD\Proyecto2_EDD2\Proyecto2\obj\Debug\net8.0\RedElectricaMunicipal.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\javia\OneDrive\Escritorio\Engineering\SEMESTRE IV\ESTRUCTURA DE DATOS II\Proyecto2EDD\Proyecto2_EDD2\Proyecto2\obj\Debug\net8.0\RedElectricaMunicipal.AssemblyInfoInputs.cache
+C:\Users\javia\OneDrive\Escritorio\Engineering\SEMESTRE IV\ESTRUCTURA DE DATOS II\Proyecto2EDD\Proyecto2_EDD2\Proyecto2\obj\Debug\net8.0\RedElectricaMunicipal.AssemblyInfo.cs
+C:\Users\javia\OneDrive\Escritorio\Engineering\SEMESTRE IV\ESTRUCTURA DE DATOS II\Proyecto2EDD\Proyecto2_EDD2\Proyecto2\obj\Debug\net8.0\RedElectricaMunicipal.csproj.CoreCompileInputs.cache
+C:\Users\javia\OneDrive\Escritorio\Engineering\SEMESTRE IV\ESTRUCTURA DE DATOS II\Proyecto2EDD\Proyecto2_EDD2\Proyecto2\obj\Debug\net8.0\RedElectricaMunicipal.sourcelink.json
+C:\Users\javia\OneDrive\Escritorio\Engineering\SEMESTRE IV\ESTRUCTURA DE DATOS II\Proyecto2EDD\Proyecto2_EDD2\Proyecto2\obj\Debug\net8.0\RedElectricaMunicipal.dll
+C:\Users\javia\OneDrive\Escritorio\Engineering\SEMESTRE IV\ESTRUCTURA DE DATOS II\Proyecto2EDD\Proyecto2_EDD2\Proyecto2\obj\Debug\net8.0\refint\RedElectricaMunicipal.dll
+C:\Users\javia\OneDrive\Escritorio\Engineering\SEMESTRE IV\ESTRUCTURA DE DATOS II\Proyecto2EDD\Proyecto2_EDD2\Proyecto2\obj\Debug\net8.0\RedElectricaMunicipal.pdb
+C:\Users\javia\OneDrive\Escritorio\Engineering\SEMESTRE IV\ESTRUCTURA DE DATOS II\Proyecto2EDD\Proyecto2_EDD2\Proyecto2\obj\Debug\net8.0\RedElectricaMunicipal.genruntimeconfig.cache
+C:\Users\javia\OneDrive\Escritorio\Engineering\SEMESTRE IV\ESTRUCTURA DE DATOS II\Proyecto2EDD\Proyecto2_EDD2\Proyecto2\obj\Debug\net8.0\ref\RedElectricaMunicipal.dll
