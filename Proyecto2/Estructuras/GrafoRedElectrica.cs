@@ -228,6 +228,19 @@ namespace RedElectricaMunicipal.Estructuras
             return false;
         }
 
+        public void DesconectarVertice(string codigo)
+        {
+            int u = ObtenerIndiceVertice(codigo);
+            if (u == -1) return;
+
+            _listasAdyacencia[u] = null;
+
+            for (int i = 0; i < _numVertices; i++)
+            {
+                if (i != u) EliminarAristaSimple(i, u);
+            }
+        }
+
         // Recorrido en Anchura (BFS) utilizando Queue<int> como única estructura auxiliar permitida.
         // Complejidad: O(V + E).
         public string[] RecorridoBFS(string codigoInicio)

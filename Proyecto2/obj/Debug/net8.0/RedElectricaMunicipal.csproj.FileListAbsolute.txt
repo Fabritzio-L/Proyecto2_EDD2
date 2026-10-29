@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\javia\OneDrive\Escritorio\Engineering\SEMESTRE IV\ESTRUCTURA DE DATOS II\Proyecto2EDD\Proyecto2_EDD2\Proyecto2\bin\Debug\net8.0\RedElectricaMunicipal.exe
 C:\Users\javia\OneDrive\Escritorio\Engineering\SEMESTRE IV\ESTRUCTURA DE DATOS II\Proyecto2EDD\Proyecto2_EDD2\Proyecto2\bin\Debug\net8.0\RedElectricaMunicipal.deps.json
 C:\Users\javia\OneDrive\Escritorio\Engineering\SEMESTRE IV\ESTRUCTURA DE DATOS II\Proyecto2EDD\Proyecto2_EDD2\Proyecto2\bin\Debug\net8.0\RedElectricaMunicipal.runtimeconfig.json
@@ -13,3 +14,20 @@ C:\Users\javia\OneDrive\Escritorio\Engineering\SEMESTRE IV\ESTRUCTURA DE DATOS I
 C:\Users\javia\OneDrive\Escritorio\Engineering\SEMESTRE IV\ESTRUCTURA DE DATOS II\Proyecto2EDD\Proyecto2_EDD2\Proyecto2\obj\Debug\net8.0\RedElectricaMunicipal.pdb
 C:\Users\javia\OneDrive\Escritorio\Engineering\SEMESTRE IV\ESTRUCTURA DE DATOS II\Proyecto2EDD\Proyecto2_EDD2\Proyecto2\obj\Debug\net8.0\RedElectricaMunicipal.genruntimeconfig.cache
 C:\Users\javia\OneDrive\Escritorio\Engineering\SEMESTRE IV\ESTRUCTURA DE DATOS II\Proyecto2EDD\Proyecto2_EDD2\Proyecto2\obj\Debug\net8.0\ref\RedElectricaMunicipal.dll
+=======
+C:\Users\fabri\Desktop\Proyecto2_EDD2\Proyecto2\bin\Debug\net8.0\RedElectricaMunicipal.exe
+C:\Users\fabri\Desktop\Proyecto2_EDD2\Proyecto2\bin\Debug\net8.0\RedElectricaMunicipal.deps.json
+C:\Users\fabri\Desktop\Proyecto2_EDD2\Proyecto2\bin\Debug\net8.0\RedElectricaMunicipal.runtimeconfig.json
+C:\Users\fabri\Desktop\Proyecto2_EDD2\Proyecto2\bin\Debug\net8.0\RedElectricaMunicipal.dll
+C:\Users\fabri\Desktop\Proyecto2_EDD2\Proyecto2\bin\Debug\net8.0\RedElectricaMunicipal.pdb
+C:\Users\fabri\Desktop\Proyecto2_EDD2\Proyecto2\obj\Debug\net8.0\RedElectricaMunicipal.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\fabri\Desktop\Proyecto2_EDD2\Proyecto2\obj\Debug\net8.0\RedElectricaMunicipal.AssemblyInfoInputs.cache
+C:\Users\fabri\Desktop\Proyecto2_EDD2\Proyecto2\obj\Debug\net8.0\RedElectricaMunicipal.AssemblyInfo.cs
+C:\Users\fabri\Desktop\Proyecto2_EDD2\Proyecto2\obj\Debug\net8.0\RedElectricaMunicipal.csproj.CoreCompileInputs.cache
+C:\Users\fabri\Desktop\Proyecto2_EDD2\Proyecto2\obj\Debug\net8.0\RedElectricaMunicipal.sourcelink.json
+C:\Users\fabri\Desktop\Proyecto2_EDD2\Proyecto2\obj\Debug\net8.0\RedElectricaMunicipal.dll
+C:\Users\fabri\Desktop\Proyecto2_EDD2\Proyecto2\obj\Debug\net8.0\refint\RedElectricaMunicipal.dll
+C:\Users\fabri\Desktop\Proyecto2_EDD2\Proyecto2\obj\Debug\net8.0\RedElectricaMunicipal.pdb
+C:\Users\fabri\Desktop\Proyecto2_EDD2\Proyecto2\obj\Debug\net8.0\RedElectricaMunicipal.genruntimeconfig.cache
+C:\Users\fabri\Desktop\Proyecto2_EDD2\Proyecto2\obj\Debug\net8.0\ref\RedElectricaMunicipal.dll
+>>>>>>> d2e9f92cca131215c3b90d535edd4d1411f5b021

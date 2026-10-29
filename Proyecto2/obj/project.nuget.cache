@@ -4,5 +4,15 @@
   "success": true,
   "projectFilePath": "C:\\Users\\javia\\OneDrive\\Escritorio\\Engineering\\SEMESTRE IV\\ESTRUCTURA DE DATOS II\\Proyecto2EDD\\Proyecto2_EDD2\\Proyecto2\\RedElectricaMunicipal.csproj",
   "expectedPackageFiles": [],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "message": "Problem reading the cache file C:\\Users\\javia\\OneDrive\\Escritorio\\Engineering\\SEMESTRE IV\\ESTRUCTURA DE DATOS II\\Proyecto2EDD\\Proyecto2_EDD2\\Proyecto2\\obj\\project.nuget.cache : '<' is an invalid start of a property name. Expected a '\"'. Path: $ | LineNumber: 2 | BytePositionInLine: 0.",
+      "projectPath": "C:\\Users\\javia\\OneDrive\\Escritorio\\Engineering\\SEMESTRE IV\\ESTRUCTURA DE DATOS II\\Proyecto2EDD\\Proyecto2_EDD2\\Proyecto2\\RedElectricaMunicipal.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\javia\\OneDrive\\Escritorio\\Engineering\\SEMESTRE IV\\ESTRUCTURA DE DATOS II\\Proyecto2EDD\\Proyecto2_EDD2\\Proyecto2\\RedElectricaMunicipal.csproj",
+      "targetGraphs": []
+    }
+  ]
 }
