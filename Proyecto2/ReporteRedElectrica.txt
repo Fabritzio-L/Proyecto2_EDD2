@@ -1,0 +1,15 @@
+----------------------------------------------------------------
+ REPORTE EJECUTIVO DE LA RED ELÉCTRICA MUNICIPAL
+ Fecha de generación: 2026-10-29 08:35:03
+Total de Subestaciones Registradas : 7
+Capacidad Instalada Total          : 613.50 MW
+----------------------------------------------------------------
+DETALLE DE SUBESTACIONES:
+ - [SUB-10] Subestacion Los altos | Capacidad: 400.00 MW
+ - [SUB-02] Subestacion Norte Minerva | Capacidad: 45.00 MW
+ - [SUB-03] Subestacion Centro Historico | Capacidad: 30.00 MW
+ - [SUB-04] Subestacion Sur Las Rosas | Capacidad: 40.00 MW
+ - [SUB-05] Subestacion Industrial Occidente | Capacidad: 55.00 MW
+ - [SUB-06] Subestacion Hospital Regional | Capacidad: 25.00 MW
+ - [SUB-07] Subestacion Rural Llanos del Pinal | Capacidad: 18.50 MW
+----------------------------------------------------------------
