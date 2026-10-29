@@ -76,7 +76,7 @@ namespace RedElectricaMunicipal.Servicios
             bool mismaZona = UnionFind.PertenecenAMismaZona(subOrigen.Codigo, subDestino.Codigo);
             if (mismaZona)
             {
-                mensajeZona = $"AVISO UNION-FIND: [{subOrigen.Codigo}] y [{subDestino.Codigo}] YA pertenecen a la misma zona eléctrica conectada (se creará una línea de respaldo/redundancia).";
+                mensajeZona = $"AVISO UNION-FIND: [{subOrigen.Codigo}] y [{subDestino.Codigo}] ya pertenecen a la misma zona eléctrica conectada (se creará una línea de respaldo.";
             }
             else
             {
@@ -96,7 +96,7 @@ namespace RedElectricaMunicipal.Servicios
 
             if (!File.Exists(rutaSubestaciones))
             {
-                Console.WriteLine($"[!] El archivo de subestaciones no existe en la ruta: {Path.GetFullPath(rutaSubestaciones)}");
+                Console.WriteLine($"El archivo de subestaciones no existe en la ruta: {Path.GetFullPath(rutaSubestaciones)}");
             }
             else
             {
@@ -114,7 +114,7 @@ namespace RedElectricaMunicipal.Servicios
                         contSub++;
                     }
                 }
-                Console.WriteLine($"Se cargaron {contSub} subestaciones desde '{rutaSubestaciones}'.");
+                Console.WriteLine($"Se cargaron {contSub} subestaciones desde {rutaSubestaciones}.");
             }
 
             if (!File.Exists(rutaLineas))
@@ -140,7 +140,7 @@ namespace RedElectricaMunicipal.Servicios
                             contLin++;
                     }
                 }
-                Console.WriteLine($"Se cargaron {contLin} líneas de distribución desde '{rutaLineas}'.");
+                Console.WriteLine($"Se cargaron {contLin} líneas de distribución desde {rutaLineas}.");
             }
         }
 
@@ -148,37 +148,67 @@ namespace RedElectricaMunicipal.Servicios
         public string SeleccionarSubestacionConAutocompletado(string etiqueta)
         {
             Console.WriteLine($"\nEscriba el nombre de la subestación ({etiqueta}).");
-            Console.WriteLine("Use las sugerencias en vivo y presione [ENTER] para elegir la #1, o escriba el código directamente:");
+            Console.WriteLine("Use las sugerencias en vivo (1-5) o escriba el código:");
+
             string buffer = "";
+            const int ANCHO_LIMPIEZA = 76;
 
             while (true)
             {
-                Console.Write($"\r> Búsqueda: {buffer}                              ");
                 EntradaSugerencia[] sugerencias = TrieNombres.BuscarPorPrefijo(buffer, 5);
 
-                Console.WriteLine("\n  Sugerencias del Trie:");
+                // 1. Posicionar al inicio de la línea actual y dibujar la barra de búsqueda
+                Console.SetCursorPosition(0, Console.CursorTop);
+                Console.WriteLine($"> Búsqueda: {buffer}".PadRight(ANCHO_LIMPIEZA));
+
+                // 2. Dibujar encabezado de sugerencias 
+                Console.WriteLine("  Sugerencias del Trie:".PadRight(ANCHO_LIMPIEZA));
+
+                // 3. Dibujar exactamente las 5 filas de sugerencias 
                 for (int i = 0; i < 5; i++)
                 {
                     if (i < sugerencias.Length)
-                        Console.WriteLine($"    [{i + 1}] {sugerencias[i].NombreSubestacion} ({sugerencias[i].CodigoSubestacion})          ");
+                    {
+                        string textoSug = $"    [{i + 1}] {sugerencias[i].NombreSubestacion} ({sugerencias[i].CodigoSubestacion})";
+                        Console.WriteLine(textoSug.PadRight(ANCHO_LIMPIEZA));
+                    }
+                    else if (i == 0 && sugerencias.Length == 0)
+                    {
+                        Console.WriteLine("(Sin coincidencias de prefijo en el Trie)".PadRight(ANCHO_LIMPIEZA));
+                    }
                     else
-                        Console.WriteLine("                                                                      ");
+                    {
+                        Console.WriteLine("".PadRight(ANCHO_LIMPIEZA));
+                    }
                 }
 
-                Console.SetCursorPosition(12 + buffer.Length, Console.CursorTop - 6);
+                int filaBusqueda = Console.CursorTop - 7;
+                Console.SetCursorPosition(12 + buffer.Length, filaBusqueda);
+
                 ConsoleKeyInfo tecla = Console.ReadKey(true);
 
-                if (tecla.Key == ConsoleKey.Enter)
+                if (tecla.Key == ConsoleKey.Escape)
                 {
-                    Console.SetCursorPosition(0, Console.CursorTop + 6);
+                    Console.SetCursorPosition(0, filaBusqueda + 7);
+                    Console.WriteLine("Búsqueda cancelada.");
+                    return null;
+                }
+                else if (tecla.Key == ConsoleKey.Enter)
+                {
+                    Console.SetCursorPosition(0, filaBusqueda + 7);
                     if (sugerencias.Length > 0)
                     {
                         Console.WriteLine($"Seleccionado: {sugerencias[0].NombreSubestacion} [{sugerencias[0].CodigoSubestacion}]");
                         return sugerencias[0].CodigoSubestacion;
                     }
-                    // Si escribió directamente un código válido (ej. SUB-01)
+
+                    // Si escribió directamente un código válido
                     Subestacion directa = TablaHash.Buscar(buffer);
-                    if (directa != null) return directa.Codigo;
+                    if (directa != null)
+                    {
+                        Console.WriteLine($"Seleccionado por código: {directa.Nombre} [{directa.Codigo}]");
+                        return directa.Codigo;
+                    }
 
                     Console.WriteLine("No se encontró coincidencia.");
                     return null;
@@ -191,7 +221,7 @@ namespace RedElectricaMunicipal.Servicios
                 else if (tecla.Key >= ConsoleKey.D1 && tecla.Key <= ConsoleKey.D5 && ((int)tecla.Key - (int)ConsoleKey.D1) < sugerencias.Length)
                 {
                     int idx = (int)tecla.Key - (int)ConsoleKey.D1;
-                    Console.SetCursorPosition(0, Console.CursorTop + 6);
+                    Console.SetCursorPosition(0, filaBusqueda + 7);
                     Console.WriteLine($"Seleccionado #{idx + 1}: {sugerencias[idx].NombreSubestacion} [{sugerencias[idx].CodigoSubestacion}]");
                     return sugerencias[idx].CodigoSubestacion;
                 }
@@ -212,7 +242,7 @@ namespace RedElectricaMunicipal.Servicios
             string codDestino = SeleccionarSubestacionConAutocompletado("DESTINO");
             if (codDestino == null) return;
 
-            Console.WriteLine("\n[PASO 2 - TABLA HASH] Localizando registros técnicos en O(1)...");
+            Console.WriteLine("\n[PASO 2 - TABLA HASH] Localizando registros técnicos en...");
             Subestacion subOrigen = TablaHash.Buscar(codOrigen);
             Subestacion subDestino = TablaHash.Buscar(codDestino);
             Console.WriteLine($"  -> Origen : {subOrigen}");
@@ -221,11 +251,11 @@ namespace RedElectricaMunicipal.Servicios
             Console.WriteLine("\n[PASO 3 - UNION-FIND] Verificando conectividad de zona eléctrica...");
             if (!UnionFind.PertenecenAMismaZona(codOrigen, codDestino))
             {
-                Console.WriteLine($"  -> [ALERTA] Las subestaciones [{codOrigen}] y [{codDestino}] pertenecen a ZONAS ELÉCTRICAS AISLADAS.");
-                Console.WriteLine("  -> No es posible restablecer el suministro sin antes construir una línea de interconexión (no se ejecuta Dijkstra).");
+                Console.WriteLine($"Las subestaciones [{codOrigen}] y [{codDestino}] pertenecen a ZONAS ELÉCTRICAS AISLADAS.");
+                Console.WriteLine("No es posible restablecer el suministro sin antes construir una línea de interconexión");
                 return;
             }
-            Console.WriteLine("  -> Ambas subestaciones pertenecen a la misma zona eléctrica conectada.");
+            Console.WriteLine("Ambas subestaciones pertenecen a la misma zona eléctrica conectada.");
 
             Console.WriteLine("\n[PASO 4 - GRAFO (DIJKSTRA)] Calculando ruta óptima de menor costo de mantenimiento...");
             bool exito = Grafo.CalcularRutaMinimaDijkstra(
@@ -237,7 +267,7 @@ namespace RedElectricaMunicipal.Servicios
 
             if (!exito)
             {
-                Console.WriteLine("  -> Aunque están en la misma zona eléctrica, el sentido unidireccional de las líneas impide el flujo en esta dirección.");
+                Console.WriteLine("Aunque están en la misma zona eléctrica, el sentido unidireccional de las líneas impide el flujo en esta dirección.");
                 return;
             }
 
@@ -245,14 +275,14 @@ namespace RedElectricaMunicipal.Servicios
             for (int i = 0; i < ruta.Length; i++)
             {
                 Subestacion info = TablaHash.Buscar(ruta[i]);
-                string flecha = (i < ruta.Length - 1) ? " ==Line==> " : "";
+                string flecha = (i < ruta.Length - 1) ? " ---> " : "";
                 Console.Write($"[{info.Codigo}: {info.Nombre}]{flecha}");
             }
             Console.WriteLine($"\n  * Longitud acumulada        : {kmTotal:F2} km");
             Console.WriteLine($"  * Costo total mantenimiento : Q{costoTotal:F2}");
         }
 
-        // Genera un reporte ejecutivo en archivo de texto para apoyo a la toma de decisiones (Competencia CE9).
+        // Genera un reporte ejecutivo en archivo de texto 
         public void GenerarReporteEstrategico(string rutaReporte)
         {
             Subestacion[] todas = TablaHash.ObtenerTodas();
@@ -261,10 +291,9 @@ namespace RedElectricaMunicipal.Servicios
 
             using (StreamWriter sw = new StreamWriter(rutaReporte))
             {
-                sw.WriteLine("================================================================");
+                sw.WriteLine("----------------------------------------------------------------");
                 sw.WriteLine(" REPORTE EJECUTIVO DE LA RED ELÉCTRICA MUNICIPAL");
                 sw.WriteLine($" Fecha de generación: {DateTime.Now:yyyy-MM-dd HH:mm:ss}");
-                sw.WriteLine("================================================================");
                 sw.WriteLine($"Total de Subestaciones Registradas : {todas.Length}");
                 sw.WriteLine($"Capacidad Instalada Total          : {capacidadTotal:F2} MW");
                 sw.WriteLine("----------------------------------------------------------------");
@@ -273,7 +302,8 @@ namespace RedElectricaMunicipal.Servicios
                 {
                     sw.WriteLine($" - {todas[i]}");
                 }
-                sw.WriteLine("================================================================");
+                sw.WriteLine("----------------------------------------------------------------");
+
             }
             Console.WriteLine($"Reporte estratégico generado exitosamente en: {Path.GetFullPath(rutaReporte)}");
         }
